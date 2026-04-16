@@ -1,34 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nuelblin <nuelblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/13 12:29:41 by nuelblin          #+#    #+#             */
-/*   Updated: 2026/04/16 13:46:15 by nuelblin         ###   ########.fr       */
+/*   Created: 2026/04/16 18:07:57 by nuelblin          #+#    #+#             */
+/*   Updated: 2026/04/16 18:27:04 by nuelblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_strrchr(const char *s, int c)
 {
 	size_t	i;
+	char	*last;
 
 	i = 0;
-	while (str[i] != '\0')
+	last = NULL;
+	while (s[i])
 	{
+		if (s[i] == (char)c)
+		{
+			last = (char *)&s[i];
+		}
 		i++;
 	}
-	return (i);
+	if (s[i] == (char)c)
+		last = (char *)&s[i];
+	return (last);
 }
 
 /* #include <stdio.h>
 
 int	main(void)
 {
-	const char str[] = "alo";
-	printf("%zu\n", ft_strlen(str));
-	return(0);
+	char	str[] = "hello world";
+
+	printf("%s\n", ft_strrchr(str, 'l'));
+	return (0);
 } */

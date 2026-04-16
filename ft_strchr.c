@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nuelblin <nuelblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/13 12:29:41 by nuelblin          #+#    #+#             */
-/*   Updated: 2026/04/16 13:46:15 by nuelblin         ###   ########.fr       */
+/*   Created: 2026/04/16 17:36:04 by nuelblin          #+#    #+#             */
+/*   Updated: 2026/04/16 17:49:34 by nuelblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_strchr(const char *s, int c)
 {
 	size_t	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (s[i])
 	{
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
 		i++;
 	}
-	return (i);
+	if (s[i] == (char)c)
+		return ((char *)&s[i]);
+	return (0);
 }
 
 /* #include <stdio.h>
 
 int	main(void)
 {
-	const char str[] = "alo";
-	printf("%zu\n", ft_strlen(str));
-	return(0);
+	char str[] = "alo o meu nome e Nuno";
+
+	printf("%s\n", ft_strchr(str, 'm'));
+
+	return (0);
 } */
