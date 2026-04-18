@@ -1,47 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nuelblin <nuelblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/17 18:24:05 by nuno1tap          #+#    #+#             */
-/*   Updated: 2026/04/18 14:36:54 by nuelblin         ###   ########.fr       */
+/*   Created: 2026/04/18 14:45:05 by nuelblin          #+#    #+#             */
+/*   Updated: 2026/04/18 16:46:31 by nuelblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t				i;
-	unsigned char		*d;
-	const unsigned char	*s;
+	char	*d;
+	char	*s;
 
-	if (!dst && !src)
-		return (0);
-	d = (unsigned char *)dst;
-	s = (const unsigned char *)src;
-	i = 0;
-	while (i < n)
+	d = (char *)dst;
+	s = (char *)src;
+	
+	if (d == s)
+		return (dst);
+	if (d < s)
 	{
-		d[i] = s[i];
-		i++;
+		size_t i;
+
+		i = 0;
+		while (i < len)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	}
+	else
+	{
+		while (len > 0)
+		{
+			len--;
+			d[len] = s[len];
+		}
 	}
 	return (dst);
 }
 
-/* #include <stdio.h>
+#include <stdio.h>
 
 int	main(void)
 {
-	char	src[] = "Hello";
-	char	dst[6];
+	char str[] = "12345";
 
-	ft_memcpy(dst, src, 6);
-
-	printf("src: %s\n", src);
-	printf("dst: %s\n", dst);
-
+	ft_memmove(str + 2, str, 5);
+	printf("%s\n", str);
 	return (0);
-} */
+}

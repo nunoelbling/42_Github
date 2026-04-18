@@ -6,7 +6,7 @@
 /*   By: nuelblin <nuelblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 18:07:57 by nuelblin          #+#    #+#             */
-/*   Updated: 2026/04/16 18:27:04 by nuelblin         ###   ########.fr       */
+/*   Updated: 2026/04/18 14:35:35 by nuelblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ char	*ft_strrchr(const char *s, int c)
 		last = (char *)&s[i];
 	return (last);
 }
+
+/* a funcao strrchr e a reverse da funcao strchr esta ao contrario 
+da original encontra o ultimo caracter escolhido dentro da string e
+retorna a pertir do ultimo caracter*/
 
 /* #include <stdio.h>
 

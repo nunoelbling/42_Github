@@ -6,7 +6,7 @@
 /*   By: nuelblin <nuelblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 17:36:04 by nuelblin          #+#    #+#             */
-/*   Updated: 2026/04/16 17:49:34 by nuelblin         ###   ########.fr       */
+/*   Updated: 2026/04/18 14:36:36 by nuelblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&s[i]);
 	return (0);
 }
+
+/*a funcao strchr encontra o primeiro caracter escolhido e imprime a partir 
+do caracter ate ao fim da string*/
 
 /* #include <stdio.h>
 
