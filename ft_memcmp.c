@@ -1,49 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nuelblin <nuelblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/18 14:45:05 by nuelblin          #+#    #+#             */
-/*   Updated: 2026/04/21 13:39:58 by nuelblin         ###   ########.fr       */
+/*   Created: 2026/04/21 14:55:23 by nuelblin          #+#    #+#             */
+/*   Updated: 2026/04/21 15:23:12 by nuelblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*d;
-	char	*s;
+	size_t			i;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
-	d = (char *)dst;
-	s = (char *)src;
-	if (d == s)
-		return (dst);
-	if (d < s)
+	i = 0;
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	while (i < n)
 	{
-		while (len--)
-			*d++ = *s++;
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
+		i++;
 	}
-	else
-	{
-		while (len > 0)
-		{
-			len--;
-			d[len] = s[len];
-		}
-	}
-	return (dst);
+	return (0);
 }
 
 /* #include <stdio.h>
 
 int	main(void)
 {
-	char str[] = "12345";
+	char	*s1;
+	char	*s2;
 
-	ft_memmove(str + 2, str, 5);
-	printf("%s\n", str);
+	s1 = "ala";
+	s2 = "alb";
+	printf(":%d", memcmp(s1, s2, 10));
 	return (0);
 } */

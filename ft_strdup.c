@@ -1,49 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nuelblin <nuelblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/18 14:45:05 by nuelblin          #+#    #+#             */
-/*   Updated: 2026/04/21 13:39:58 by nuelblin         ###   ########.fr       */
+/*   Created: 2026/04/21 17:59:05 by nuelblin          #+#    #+#             */
+/*   Updated: 2026/04/21 18:49:38 by nuelblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_strdup(const char *s)
 {
-	char	*d;
-	char	*s;
+	char	*dest;
+	size_t	len;
 
-	d = (char *)dst;
-	s = (char *)src;
-	if (d == s)
-		return (dst);
-	if (d < s)
-	{
-		while (len--)
-			*d++ = *s++;
-	}
-	else
-	{
-		while (len > 0)
-		{
-			len--;
-			d[len] = s[len];
-		}
-	}
-	return (dst);
+	len = ft_strlen(s) + 1;
+	dest = (char *)malloc(len * sizeof(char));
+	if (!dest)
+		return (NULL);
+	ft_memcpy(dest, s, len);
+	return (dest);
 }
 
 /* #include <stdio.h>
 
 int	main(void)
 {
-	char str[] = "12345";
-
-	ft_memmove(str + 2, str, 5);
-	printf("%s\n", str);
-	return (0);
+	printf(":%s:", ft_strdup("alo"));
+	return(0);
 } */
