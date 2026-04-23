@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nuelblin <nuelblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/22 19:01:14 by nuno1tap          #+#    #+#             */
-/*   Updated: 2026/04/23 13:14:49 by nuelblin         ###   ########.fr       */
+/*   Created: 2026/04/23 12:50:35 by nuelblin          #+#    #+#             */
+/*   Updated: 2026/04/23 13:41:43 by nuelblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*str;
-	size_t	lenght;
+	size_t	start;
+	size_t	end;
 
-	if (!s)
+	start = 0;
+	if (!s1 || !set)
 		return (NULL);
-	lenght = ft_strlen(s);
-	if (start >= lenght)
-		return (ft_strdup(""));
-	if (len > lenght - start)
-		len = lenght - start;
-	str = (char *)malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (NULL);
-	ft_strlcpy(str, s + start, len + 1);
-	return (str);
+	while (s1[start] && ft_strchr(set, s1[start]))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && ft_strchr(set, s1[end - 1]))
+		end--;
+	return (ft_substr(s1, start, end - start));
 }
-
-/* #include	<stdio.h>
+/* 
+#include <stdio.h>
 
 int	main(void)
 {
-	printf(":%s:", ft_substr("0123456789 Alo o meu nome e Nuno", 11, 3));
-	return(0);
+	printf(":%s:", ft_strtrim("##### alo ### adeus###", "#"));
+	return (0);
 } */
