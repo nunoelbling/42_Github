@@ -6,7 +6,7 @@
 /*   By: nuelblin <nuelblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 16:36:47 by nuelblin          #+#    #+#             */
-/*   Updated: 2026/04/16 13:29:30 by nuelblin         ###   ########.fr       */
+/*   Updated: 2026/04/30 13:14:20 by nuelblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	int				i;
+	size_t			i;
 	unsigned char	*temp;
 
 	i = 0;

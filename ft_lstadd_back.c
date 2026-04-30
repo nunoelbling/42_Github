@@ -6,7 +6,7 @@
 /*   By: nuelblin <nuelblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 15:41:58 by nuelblin          #+#    #+#             */
-/*   Updated: 2026/04/29 16:05:24 by nuelblin         ###   ########.fr       */
+/*   Updated: 2026/04/30 12:28:31 by nuelblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (!lst || !new)
 		return ;
-	if (*lst = NULL)
+	if (!*lst)
 	{
 		*lst = new;
 		return ;

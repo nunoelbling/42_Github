@@ -6,7 +6,7 @@
 /*   By: nuelblin <nuelblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 20:22:36 by nuno1tap          #+#    #+#             */
-/*   Updated: 2026/04/23 13:21:29 by nuelblin         ###   ########.fr       */
+/*   Updated: 2026/04/30 13:04:21 by nuelblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!str)
 		return (NULL);
 	i = 0;
+	j = 0;
 	while (s1[i])
 	{
 		str[i] = s1[i];

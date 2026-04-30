@@ -6,7 +6,7 @@
 /*   By: nuelblin <nuelblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 15:20:53 by nuelblin          #+#    #+#             */
-/*   Updated: 2026/04/25 11:57:39 by nuelblin         ###   ########.fr       */
+/*   Updated: 2026/04/30 13:06:37 by nuelblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static	int	count_words(const char *s, char c)
 	size_t	i;
 
 	count = 0;
+	i = 0;
 	while (s[i])
 	{
 		if (s[i] != c && (s[i + 1] == c || s[i + 1] == '\0'))
