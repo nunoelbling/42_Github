@@ -6,7 +6,7 @@
 /*   By: nuelblin <nuelblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 15:20:53 by nuelblin          #+#    #+#             */
-/*   Updated: 2026/04/30 13:06:37 by nuelblin         ###   ########.fr       */
+/*   Updated: 2026/05/07 15:06:32 by nuelblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,27 +64,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (res[i] = NULL, res);
 }
-
-/*#include <stdio.h>
-
-int main(void)
-{
-    char **res;
-    int  i;
-
-    i = 0;
-
-    res = ft_split("alalalallalalallalald,svlksna faf ga ", 'a');
-
-    if (!res)
-        return (1);
-    while (res[i] != NULL)
-    {
-        printf("Palavra %d: :%s:\n", i, res[i]);
-        free(res[i]);
-        i++;
-    }
-    free(res);
-    
-    return (0);
-} */

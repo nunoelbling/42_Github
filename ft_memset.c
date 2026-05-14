@@ -6,11 +6,11 @@
 /*   By: nuelblin <nuelblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 17:48:47 by nuelblin          #+#    #+#             */
-/*   Updated: 2026/04/16 13:26:53 by nuelblin         ###   ########.fr       */
+/*   Updated: 2026/05/11 14:04:11 by nuelblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {

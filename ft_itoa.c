@@ -6,7 +6,7 @@
 /*   By: nuelblin <nuelblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 11:58:15 by nuelblin          #+#    #+#             */
-/*   Updated: 2026/04/25 12:39:12 by nuelblin         ###   ########.fr       */
+/*   Updated: 2026/05/08 15:01:30 by nuelblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,12 @@ char	*ft_itoa(int n)
 
 int	main(void)
 {
-	printf(":%s:", ft_itoa(-1212442525));
+	char *res;
+	
+	res = ft_itoa(-1212442525);
+	if (!res)
+		return (1);
+	printf(":%s:", res);
+	free(res);
 	return (0);
 } */

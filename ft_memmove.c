@@ -6,7 +6,7 @@
 /*   By: nuelblin <nuelblin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/18 14:45:05 by nuelblin          #+#    #+#             */
-/*   Updated: 2026/04/21 13:39:58 by nuelblin         ###   ########.fr       */
+/*   Updated: 2026/05/07 16:03:39 by nuelblin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,4 @@ int	main(void)
 	ft_memmove(str + 2, str, 5);
 	printf("%s\n", str);
 	return (0);
-} */
+}  */
